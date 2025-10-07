@@ -52,11 +52,11 @@ export const Testimonials = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-4">
-            💬 What <span className="gradient-text">People Say</span>
+          <h2 className="text-5xl md:text-6xl font-bold mb-4 animate-bounce-slow">
+            💬✨ What <span className="gradient-text">People Say</span> 🌟💯
           </h2>
           <p className="text-xl text-muted-foreground">
-            Success stories from our amazing students
+            Success stories from our amazing students 🎓🚀
           </p>
         </motion.div>
 
@@ -70,24 +70,29 @@ export const Testimonials = () => {
               transition={{ duration: 0.6, delay: index * 0.1 }}
               whileHover={{ y: -10, rotate: 2 }}
             >
-              <Card className="glass p-6 h-full hover:glow-cyan transition-all duration-300">
+              <Card className="glass p-6 h-full glow-rainbow animate-glow-rainbow hover:scale-105 transition-all duration-300">
                 <div className="flex gap-1 mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star
+                    <motion.div
                       key={i}
-                      className="w-5 h-5 fill-accent text-accent"
-                    />
+                      animate={{ rotate: [0, 20, -20, 0], scale: [1, 1.2, 1] }}
+                      transition={{ duration: 2, repeat: Infinity, delay: i * 0.2 }}
+                    >
+                      <Star
+                        className="w-5 h-5 fill-accent text-accent"
+                      />
+                    </motion.div>
                   ))}
                 </div>
                 <p className="text-lg mb-6 italic leading-relaxed">
-                  "{testimonial.text}"
+                  "✨ {testimonial.text}"
                 </p>
                 <div className="border-t border-border pt-4">
-                  <div className="font-semibold text-primary">
-                    {testimonial.name}
+                  <div className="font-semibold gradient-text-gold">
+                    {testimonial.name} 🎓
                   </div>
                   <div className="text-sm text-muted-foreground">
-                    {testimonial.role}
+                    {testimonial.role} 💼
                   </div>
                 </div>
               </Card>

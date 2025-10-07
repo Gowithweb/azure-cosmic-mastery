@@ -23,11 +23,11 @@ export const Companies = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            💼 Employees Who Learn <span className="gradient-text">With Us</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 animate-pulse-slow">
+            💼✨ Employees Who Learn <span className="gradient-text">With Us</span> 🌟🎓
           </h2>
           <p className="text-xl text-muted-foreground">
-            Students from top companies trust our training
+            🌍 Students from top companies trust our training 🚀
           </p>
         </motion.div>
 
@@ -47,14 +47,15 @@ export const Companies = () => {
               className="flex gap-12 items-center"
             >
               {[...companies, ...companies, ...companies].map((company, index) => (
-                <div
+                <motion.div
                   key={index}
-                  className="glass px-8 py-6 rounded-2xl min-w-[250px] text-center hover:glow-azure transition-all"
+                  className="glass px-8 py-6 rounded-2xl min-w-[250px] text-center glow-rainbow animate-glow-rainbow hover:scale-110 transition-all"
+                  whileHover={{ scale: 1.15, rotate: 3 }}
                 >
-                  <span className="text-2xl font-bold text-primary">
-                    {company}
+                  <span className="text-2xl font-bold gradient-text">
+                    ⭐ {company} ✨
                   </span>
-                </div>
+                </motion.div>
               ))}
             </motion.div>
           </div>

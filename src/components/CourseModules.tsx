@@ -45,11 +45,11 @@ export const CourseModules = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-4">
-            📘 Course <span className="gradient-text">Modules</span>
+          <h2 className="text-5xl md:text-6xl font-bold mb-4 animate-bounce-slow">
+            📘✨ Course <span className="gradient-text">Modules</span> 🎯🚀
           </h2>
           <p className="text-xl text-muted-foreground">
-            14 comprehensive modules covering everything from basics to advanced
+            14 comprehensive modules covering everything from basics to advanced 💡
           </p>
         </motion.div>
 
@@ -62,17 +62,27 @@ export const CourseModules = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
             >
-              <Card className="glass p-6 hover:scale-105 transition-all duration-300 cursor-pointer group">
+              <Card className="glass p-6 hover:scale-110 hover:rotate-2 transition-all duration-300 cursor-pointer group glow-rainbow animate-glow-rainbow">
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0">
-                    <div className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors glow-azure">
+                    <motion.div 
+                      className="w-14 h-14 rounded-xl bg-primary/20 flex items-center justify-center group-hover:bg-primary/30 transition-colors glow-gold"
+                      whileHover={{ scale: 1.2, rotate: 360 }}
+                      transition={{ duration: 0.5 }}
+                    >
                       <module.icon className="w-7 h-7 text-primary" />
-                    </div>
+                    </motion.div>
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center gap-2 mb-2">
-                      <span className="text-2xl">{module.emoji}</span>
-                      <span className="font-bold text-primary text-lg">
+                      <motion.span 
+                        className="text-2xl"
+                        animate={{ rotate: [0, 10, -10, 0] }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                      >
+                        {module.emoji}
+                      </motion.span>
+                      <span className="font-bold gradient-text text-lg">
                         {index + 1}
                       </span>
                     </div>
@@ -94,8 +104,8 @@ export const CourseModules = () => {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="text-center mt-12"
         >
-          <p className="text-2xl font-semibold text-accent">
-            📚 Learn from Real Projects, Real DevOps Pipelines
+          <p className="text-2xl font-semibold gradient-text animate-pulse-slow">
+            📚✨ Learn from Real Projects, Real DevOps Pipelines 🚀💻
           </p>
         </motion.div>
       </div>

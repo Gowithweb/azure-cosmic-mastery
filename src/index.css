@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Azure DevOps Theme - Dark Navy & Azure Blue */
+    /* Vibrant Multicolor Theme - Gold, Blue, Purple, Cyan */
     --background: 220 75% 8%;
     --foreground: 210 100% 98%;
 
@@ -41,14 +41,21 @@ All colors MUST be HSL.
 
     --radius: 1rem;
 
-    /* Custom Azure Gradients */
+    /* Multicolor Gradients - Gold, Blue, Purple, Cyan */
+    --gradient-rainbow: linear-gradient(135deg, hsl(45 100% 60%), hsl(280 100% 60%), hsl(211 100% 50%), hsl(187 100% 50%));
+    --gradient-gold-blue: linear-gradient(135deg, hsl(45 100% 60%), hsl(211 100% 50%));
+    --gradient-purple-cyan: linear-gradient(135deg, hsl(280 100% 60%), hsl(187 100% 50%));
     --gradient-azure: linear-gradient(135deg, hsl(211 100% 50%), hsl(187 100% 50%));
     --gradient-dark: linear-gradient(180deg, hsl(220 75% 8%), hsl(220 70% 12%));
     --gradient-glow: radial-gradient(circle at 50% 50%, hsl(211 100% 50% / 0.2), transparent);
+    --gradient-animated: linear-gradient(270deg, hsl(45 100% 60%), hsl(280 100% 60%), hsl(211 100% 50%), hsl(187 100% 50%));
     
-    /* Glow Effects */
+    /* Glow Effects - Multi-color */
     --glow-azure: 0 0 20px hsl(211 100% 50% / 0.4), 0 0 40px hsl(211 100% 50% / 0.2);
     --glow-cyan: 0 0 20px hsl(187 100% 50% / 0.4), 0 0 40px hsl(187 100% 50% / 0.2);
+    --glow-gold: 0 0 20px hsl(45 100% 60% / 0.5), 0 0 40px hsl(45 100% 60% / 0.3);
+    --glow-purple: 0 0 20px hsl(280 100% 60% / 0.5), 0 0 40px hsl(280 100% 60% / 0.3);
+    --glow-rainbow: 0 0 30px hsl(45 100% 60% / 0.3), 0 0 50px hsl(280 100% 60% / 0.2), 0 0 70px hsl(187 100% 50% / 0.2);
     
     /* Glass Effects */
     --glass-bg: hsl(220 70% 12% / 0.3);
@@ -65,6 +72,15 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
     font-family: 'Poppins', sans-serif;
     overflow-x: hidden;
+    background: linear-gradient(135deg, hsl(220 75% 8%), hsl(280 40% 12%), hsl(220 75% 8%));
+    background-size: 400% 400%;
+    animation: gradient-shift 15s ease infinite;
+  }
+
+  @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
 
   /* Glassmorphism utilities */
@@ -82,9 +98,37 @@ All colors MUST be HSL.
     box-shadow: var(--glow-cyan);
   }
 
+  .glow-gold {
+    box-shadow: var(--glow-gold);
+  }
+
+  .glow-purple {
+    box-shadow: var(--glow-purple);
+  }
+
+  .glow-rainbow {
+    box-shadow: var(--glow-rainbow);
+  }
+
   /* Gradient text */
   .gradient-text {
-    background: var(--gradient-azure);
+    background: var(--gradient-rainbow);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: gradient-shift 5s ease infinite;
+  }
+
+  .gradient-text-gold {
+    background: var(--gradient-gold-blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-purple {
+    background: var(--gradient-purple-cyan);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
